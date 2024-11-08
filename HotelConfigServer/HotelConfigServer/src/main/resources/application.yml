@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: C:\Users\anurodhsingh\OneDrive - Nagarro\Desktop\SpringBoot Projects\HotelManagement MicroService\hotelconfig
+
+  application:
+    name: config-server
+

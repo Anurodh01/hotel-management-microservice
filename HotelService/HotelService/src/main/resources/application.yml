@@ -1,0 +1,26 @@
+#server:
+#  port: 8091
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/hotelservice
+#    username: postgres
+#    password: Anurodh@1708
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#  application:
+#    name: hotel-service
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    hostname: localhost
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+
+spring:
+  config:
+    import: configserver:http://localhost:8888
+  application:
+    name: hotel-service

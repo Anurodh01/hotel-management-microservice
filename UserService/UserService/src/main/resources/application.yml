@@ -1,0 +1,33 @@
+#server:
+#  port: 8090
+
+#spring:
+#  application:
+#    name: user-service
+#  data:
+#    mongodb:
+#      uri: mongodb://localhost:27017
+#      database: userservice
+
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#    hostname: localhost
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+
+spring:
+  config:
+    import: configserver:http://localhost:8888
+  application:
+    name: user-service
+
+resilience4j:
+  retry:
+    metrics:
+      enabled: true
+    instances:
+      rating-hotel-service-retry:
+        maxAttempts: 3
+        waitDuration: 1s
